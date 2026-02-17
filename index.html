@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Modello2 — Portfolio Fotomodelki</title>
+  <meta name="description" content="Profesjonalne portfolio fotomodelki — galeria, bio, booking i kontakt. Minimalistyczny, responsywny design." />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="brand" href="#">Modello2</a>
+      <ul class="nav-links">
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#about">O mnie</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+      </ul>
+      <a class="cta" href="#contact">Book Me</a>
+    </nav>
+    <section class="hero container">
+      <div class="hero-text">
+        <h1>Fotomodelka | Modny look, profesjonalne sesje</h1>
+        <p>Portfolio pokazujące styl, zakres prac i dostępność. Zapytania o booking i współpracę.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#portfolio">Zobacz portfolio</a>
+          <a class="btn ghost" href="#contact">Kontakt</a>
+        </div>
+      </div>
+      <div class="hero-image" aria-hidden="true">
+        <img src="assets/hero.jpg" alt="Modelka - hero" />
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section id="portfolio" class="section container">
+      <h2>Portfolio</h2>
+      <p class="lead">Wybrane sesje — editorial, fashion, commercial.</p>
+      <div class="gallery" id="gallery">
+        <!-- images will be lazy-loaded -->
+      </div>
+    </section>
+
+    <section id="about" class="section container split">
+      <div>
+        <h2>O mnie</h2>
+        <p>Profesjonalna fotomodelka z doświadczeniem w branży editorial i komercyjnej. Współpracuję z fotografami, stylistami i agencjami. Dostępna do bookingów.</p>
+        <ul class="stats">
+          <li><strong>8+</strong> lat doświadczenia</li>
+          <li><strong>50+</strong> sesji</li>
+          <li><strong>Agencje</strong> współpraca</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Usługi</h3>
+        <ul>
+          <li>Fashion & Editorial</li>
+          <li>Commercial</li>
+          <li>Lookbook & E-commerce</li>
+          <li>Runway & Castings</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="section container contact-section">
+      <h2>Kontakt / Booking</h2>
+      <p>Wypełnij formularz lub napisz bezpośrednio na email: <a href="mailto:kontakt@modello2.example">kontakt@modello2.example</a></p>
+      <form id="contactForm" class="contact-form">
+        <label>Imię i nazwisko<input name="name" required></label>
+        <label>Email<input name="email" type="email" required></label>
+        <label>Wiadomość<textarea name="message" rows="5" required></textarea></label>
+        <button type="submit" class="btn primary">Wyślij</button>
+      </form>
+      <div id="formResult" role="status" aria-live="polite"></div>
+    </section>
+
+    <section class="section container instagram">
+      <h2>Instagram</h2>
+      <p class="lead">Ostatnie posty</p>
+      <div id="instaFeed" class="grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Modello2 — All rights reserved.</p>
+      <p>Designed & Built with care.</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
