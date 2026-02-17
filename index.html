@@ -4,29 +4,46 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Modello2 — Portfolio Fotomodelki</title>
-  <meta name="description" content="Profesjonalne portfolio fotomodelki — sesje, galeria, bio i kontakt.">
+  <meta name="description" content="Profesjonalne portfolio fotomodelki — sesje studyjne, plenerowe, kampanie komercyjne i kontakt.">
   <meta name="author" content="Fotomodelka">
+  <link rel="canonical" href="https://example.com/">
+  <meta name="robots" content="index,follow">
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Open Graph / Twitter -->
   <meta property="og:title" content="Modello2 — Portfolio Fotomodelki">
   <meta property="og:description" content="Profesjonalne portfolio fotomodelki — sesje, galeria, bio i kontakt.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/og-image.jpg">
+  <meta property="og:url" content="https://example.com/">
+  <meta property="og:image" content="https://example.com/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
+
   <link rel="icon" href="assets/favicon.png">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+  <!-- Structured data -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"Person",
     "name":"Fotomodelka",
+    "url":"https://example.com",
+    "headline":"Fotomodelka — portfolio i współprace",
     "description":"Portfolio profesjonalnej fotomodelki — sesje, współprace, kontakt.",
-    "url":"https://example.com"
+    "sameAs":["https://instagram.com/username","https://behance.net/username"],
+    "contactPoint":{
+      "@type":"ContactPoint",
+      "contactType":"customer support",
+      "email":"kontakt@example.com"
+    }
   }
   </script>
 </head>
 <body>
   <header class="site-header">
-    <nav class="nav container">
+    <nav class="nav container" aria-label="Główna nawigacja">
       <a class="brand" href="#">Modello2</a>
       <ul class="nav-links">
         <li><a href="#about">O mnie</a></li>
@@ -35,15 +52,16 @@
         <li><a href="#contact">Kontakt</a></li>
       </ul>
     </nav>
-    <section class="hero container">
+    <section class="hero container" aria-label="Hero">
       <div class="hero-content">
         <h1>Fotomodelka • Portfolio</h1>
         <p>Profesjonalne sesje, komercyjne kampanie i kreatywna współpraca.</p>
         <a class="btn" href="#contact">Zarezerwuj sesję</a>
       </div>
       <picture class="hero-image">
-        <source data-srcset="assets/hero-800.jpg 800w, assets/hero-1200.jpg 1200w" media="(min-width:600px)">
-        <img data-src="assets/hero-600.jpg" alt="Hero photo" class="lazy rounded">
+        <source data-srcset="assets/hero-1200.webp 1200w, assets/hero-800.webp 800w" type="image/webp" media="(min-width:600px)">
+        <source data-srcset="assets/hero-1200.jpg 1200w, assets/hero-800.jpg 800w" media="(min-width:600px)">
+        <img data-src="assets/hero-600.jpg" alt="Hero photo" class="lazy rounded" width="1200" height="800" decoding="async">
       </picture>
     </section>
   </header>
@@ -66,7 +84,7 @@
           <a class="btn ghost" href="#gallery">Zobacz portfolio</a>
         </div>
         <div class="about-portrait">
-          <img data-src="assets/portrait-400.jpg" alt="Portrait" class="lazy rounded">
+          <img data-src="assets/portrait-400.jpg" alt="Portrait" class="lazy rounded" width="400" height="600" decoding="async">
         </div>
       </div>
     </section>
@@ -85,26 +103,26 @@
       <h2>Galeria</h2>
       <p class="muted">Filtruj według stylu i kliknij zdjęcie, aby powiększyć.</p>
 
-      <div class="gallery-controls">
-        <button class="filter-btn active" data-filter="all">Wszystkie</button>
-        <button class="filter-btn" data-filter="studio">Studio</button>
-        <button class="filter-btn" data-filter="outdoor">Plener</button>
-        <button class="filter-btn" data-filter="commercial">Komercyjne</button>
+      <div class="gallery-controls" role="tablist" aria-label="Filtry galerii">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">Wszystkie</button>
+        <button class="filter-btn" data-filter="studio" role="tab">Studio</button>
+        <button class="filter-btn" data-filter="outdoor" role="tab">Plener</button>
+        <button class="filter-btn" data-filter="commercial" role="tab">Komercyjne</button>
       </div>
 
       <div class="gallery-grid" aria-live="polite">
-        <button class="gallery-item" data-full="assets/full1.jpg" data-category="studio"><img data-src="assets/thumb1.jpg" alt="Sesja 1" class="lazy"></button>
-        <button class="gallery-item" data-full="assets/full2.jpg" data-category="outdoor"><img data-src="assets/thumb2.jpg" alt="Sesja 2" class="lazy"></button>
-        <button class="gallery-item" data-full="assets/full3.jpg" data-category="commercial"><img data-src="assets/thumb3.jpg" alt="Sesja 3" class="lazy"></button>
-        <button class="gallery-item" data-full="assets/full4.jpg" data-category="studio"><img data-src="assets/thumb4.jpg" alt="Sesja 4" class="lazy"></button>
-        <button class="gallery-item" data-full="assets/full5.jpg" data-category="outdoor"><img data-src="assets/thumb5.jpg" alt="Sesja 5" class="lazy"></button>
-        <button class="gallery-item" data-full="assets/full6.jpg" data-category="commercial"><img data-src="assets/thumb6.jpg" alt="Sesja 6" class="lazy"></button>
+        <button class="gallery-item" data-full="assets/full1.jpg" data-category="studio"><img data-src="assets/thumb1.jpg" alt="Sesja 1" class="lazy" width="600" height="400"></button>
+        <button class="gallery-item" data-full="assets/full2.jpg" data-category="outdoor"><img data-src="assets/thumb2.jpg" alt="Sesja 2" class="lazy" width="600" height="400"></button>
+        <button class="gallery-item" data-full="assets/full3.jpg" data-category="commercial"><img data-src="assets/thumb3.jpg" alt="Sesja 3" class="lazy" width="600" height="400"></button>
+        <button class="gallery-item" data-full="assets/full4.jpg" data-category="studio"><img data-src="assets/thumb4.jpg" alt="Sesja 4" class="lazy" width="600" height="400"></button>
+        <button class="gallery-item" data-full="assets/full5.jpg" data-category="outdoor"><img data-src="assets/thumb5.jpg" alt="Sesja 5" class="lazy" width="600" height="400"></button>
+        <button class="gallery-item" data-full="assets/full6.jpg" data-category="commercial"><img data-src="assets/thumb6.jpg" alt="Sesja 6" class="lazy" width="600" height="400"></button>
       </div>
     </section>
 
-    <div id="lightbox" class="lightbox" aria-hidden="true">
+    <div id="lightbox" class="lightbox" aria-hidden="true" tabindex="-1">
       <button class="lb-close" aria-label="Zamknij">×</button>
-      <img class="lb-image" alt="Powiększone zdjęcie">
+      <img class="lb-image" alt="Powiększone zdjęcie" decoding="async" width="1200" height="800">
       <div class="lb-controls">
         <button class="lb-prev" aria-label="Poprzednie">‹</button>
         <button class="lb-next" aria-label="Następne">›</button>
@@ -128,7 +146,7 @@
   <footer class="site-footer">
     <div class="container">
       <p>© 2026 Modello2 — Portfolio. Wszystkie prawa zastrzeżone.</p>
-      <nav class="social">
+      <nav class="social" aria-label="Linki do mediów społecznościowych">
         <a href="#" aria-label="Instagram">IG</a>
         <a href="#" aria-label="Behance">Behance</a>
       </nav>
