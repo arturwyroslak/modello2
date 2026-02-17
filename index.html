@@ -1,91 +1,111 @@
 <!doctype html>
 <html lang="pl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Modello2 — Portfolio Fotomodelki</title>
-  <meta name="description" content="Profesjonalne portfolio fotomodelki — galeria, bio, booking i kontakt. Minimalistyczny, responsywny design." />
+  <meta name="description" content="Profesjonalne portfolio fotomodelki — sesje, galeria, bio i kontakt.">
+  <meta name="author" content="Fotomodelka">
   <link rel="stylesheet" href="styles.css">
+  <meta property="og:title" content="Modello2 — Portfolio Fotomodelki">
+  <meta property="og:description" content="Profesjonalne portfolio fotomodelki — sesje, galeria, bio i kontakt.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.png">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Fotomodelka",
+    "description":"Portfolio profesjonalnej fotomodelki — sesje, współprace, kontakt.",
+    "url":"https://example.com"
+  }
+  </script>
 </head>
 <body>
   <header class="site-header">
     <nav class="nav container">
       <a class="brand" href="#">Modello2</a>
       <ul class="nav-links">
-        <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#about">O mnie</a></li>
+        <li><a href="#gallery">Galeria</a></li>
         <li><a href="#contact">Kontakt</a></li>
       </ul>
-      <a class="cta" href="#contact">Book Me</a>
     </nav>
     <section class="hero container">
-      <div class="hero-text">
-        <h1>Fotomodelka | Modny look, profesjonalne sesje</h1>
-        <p>Portfolio pokazujące styl, zakres prac i dostępność. Zapytania o booking i współpracę.</p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#portfolio">Zobacz portfolio</a>
-          <a class="btn ghost" href="#contact">Kontakt</a>
-        </div>
+      <div class="hero-content">
+        <h1>Fotomodelka • Portfolio</h1>
+        <p>Profesjonalne sesje, komercyjne kampanie i kreatywna współpraca.</p>
+        <a class="btn" href="#contact">Zarezerwuj sesję</a>
       </div>
-      <div class="hero-image" aria-hidden="true">
-        <img src="assets/hero.jpg" alt="Modelka - hero" />
-      </div>
+      <picture class="hero-image">
+        <img data-src="assets/hero.jpg" alt="Hero photo" class="lazy">
+      </picture>
     </section>
   </header>
 
   <main>
-    <section id="portfolio" class="section container">
-      <h2>Portfolio</h2>
-      <p class="lead">Wybrane sesje — editorial, fashion, commercial.</p>
-      <div class="gallery" id="gallery">
-        <!-- images will be lazy-loaded -->
+    <section id="about" class="about container">
+      <div class="about-grid">
+        <div class="about-text">
+          <h2>O mnie</h2>
+          <p>Jestem fotomodelką z doświadczeniem w sesjach studyjnych i plenerowych. Współpracuję z fotografami, stylistami i markami modowymi. Zawsze dążę do najwyższej jakości zdjęć i pozytywnej współpracy.</p>
+          <ul>
+            <li>Doświadczenie: 5+ lat</li>
+            <li>Dostępność: Europe</li>
+            <li>Języki: PL / EN</li>
+          </ul>
+          <a class="btn ghost" href="#gallery">Zobacz portfolio</a>
+        </div>
+        <div class="about-portrait">
+          <img data-src="assets/portrait.jpg" alt="Portrait" class="lazy rounded">
+        </div>
       </div>
     </section>
 
-    <section id="about" class="section container split">
-      <div>
-        <h2>O mnie</h2>
-        <p>Profesjonalna fotomodelka z doświadczeniem w branży editorial i komercyjnej. Współpracuję z fotografami, stylistami i agencjami. Dostępna do bookingów.</p>
-        <ul class="stats">
-          <li><strong>8+</strong> lat doświadczenia</li>
-          <li><strong>50+</strong> sesji</li>
-          <li><strong>Agencje</strong> współpraca</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Usługi</h3>
-        <ul>
-          <li>Fashion & Editorial</li>
-          <li>Commercial</li>
-          <li>Lookbook & E-commerce</li>
-          <li>Runway & Castings</li>
-        </ul>
+    <section id="gallery" class="gallery container">
+      <h2>Galeria</h2>
+      <p class="muted">Kliknij zdjęcie, aby powiększyć. Galeria jest responsywna i ładuje obrazy leniwie.</p>
+      <div class="gallery-grid" aria-live="polite">
+        <button class="gallery-item" data-full="assets/img1.jpg"><img data-src="assets/thumb1.jpg" alt="Sesja 1" class="lazy"></button>
+        <button class="gallery-item" data-full="assets/img2.jpg"><img data-src="assets/thumb2.jpg" alt="Sesja 2" class="lazy"></button>
+        <button class="gallery-item" data-full="assets/img3.jpg"><img data-src="assets/thumb3.jpg" alt="Sesja 3" class="lazy"></button>
+        <button class="gallery-item" data-full="assets/img4.jpg"><img data-src="assets/thumb4.jpg" alt="Sesja 4" class="lazy"></button>
+        <button class="gallery-item" data-full="assets/img5.jpg"><img data-src="assets/thumb5.jpg" alt="Sesja 5" class="lazy"></button>
+        <button class="gallery-item" data-full="assets/img6.jpg"><img data-src="assets/thumb6.jpg" alt="Sesja 6" class="lazy"></button>
       </div>
     </section>
 
-    <section id="contact" class="section container contact-section">
-      <h2>Kontakt / Booking</h2>
-      <p>Wypełnij formularz lub napisz bezpośrednio na email: <a href="mailto:kontakt@modello2.example">kontakt@modello2.example</a></p>
-      <form id="contactForm" class="contact-form">
-        <label>Imię i nazwisko<input name="name" required></label>
-        <label>Email<input name="email" type="email" required></label>
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <button class="lb-close" aria-label="Zamknij">×</button>
+      <img class="lb-image" alt="Powiększone zdjęcie">
+      <div class="lb-controls">
+        <button class="lb-prev" aria-label="Poprzednie">‹</button>
+        <button class="lb-next" aria-label="Następne">›</button>
+      </div>
+    </div>
+
+    <section id="contact" class="contact container">
+      <h2>Kontakt</h2>
+      <p class="muted">Wypełnij formularz lub napisz bezpośrednio na <a href="mailto:kontakt@example.com">kontakt@example.com</a></p>
+      <form id="contactForm" class="contact-form" novalidate>
+        <label>Imię i nazwisko<input type="text" name="name" required></label>
+        <label>Email<input type="email" name="email" required></label>
         <label>Wiadomość<textarea name="message" rows="5" required></textarea></label>
-        <button type="submit" class="btn primary">Wyślij</button>
+        <label class="consent"><input type="checkbox" name="consent" required> Wyrażam zgodę na przetwarzanie danych.</label>
+        <button type="submit" class="btn">Wyślij wiadomość</button>
+        <p class="form-status" aria-live="polite"></p>
       </form>
-      <div id="formResult" role="status" aria-live="polite"></div>
-    </section>
-
-    <section class="section container instagram">
-      <h2>Instagram</h2>
-      <p class="lead">Ostatnie posty</p>
-      <div id="instaFeed" class="grid"></div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>© 2026 Modello2 — All rights reserved.</p>
-      <p>Designed & Built with care.</p>
+      <p>© 2026 Modello2 — Portfolio. Wszystkie prawa zastrzeżone.</p>
+      <nav class="social">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="Behance">Behance</a>
+      </nav>
     </div>
   </footer>
 

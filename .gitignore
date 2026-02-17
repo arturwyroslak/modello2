@@ -1,4 +1,14 @@
-node_modules
+# Node
+node_modules/
+
+# macOS
 .DS_Store
+
+# Env files
 .env
-dist
+
+# Build
+dist/
+
+# Assets sources
+assets/sources/
