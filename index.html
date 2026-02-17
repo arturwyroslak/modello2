@@ -10,8 +10,10 @@
   <meta property="og:title" content="Modello2 — Portfolio Fotomodelki">
   <meta property="og:description" content="Profesjonalne portfolio fotomodelki — sesje, galeria, bio i kontakt.">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/favicon.png">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -29,6 +31,7 @@
       <ul class="nav-links">
         <li><a href="#about">O mnie</a></li>
         <li><a href="#gallery">Galeria</a></li>
+        <li><a href="#services">Usługi</a></li>
         <li><a href="#contact">Kontakt</a></li>
       </ul>
     </nav>
@@ -39,7 +42,8 @@
         <a class="btn" href="#contact">Zarezerwuj sesję</a>
       </div>
       <picture class="hero-image">
-        <img data-src="assets/hero.jpg" alt="Hero photo" class="lazy">
+        <source data-srcset="assets/hero-800.jpg 800w, assets/hero-1200.jpg 1200w" media="(min-width:600px)">
+        <img data-src="assets/hero-600.jpg" alt="Hero photo" class="lazy rounded">
       </picture>
     </section>
   </header>
@@ -49,30 +53,52 @@
       <div class="about-grid">
         <div class="about-text">
           <h2>O mnie</h2>
-          <p>Jestem fotomodelką z doświadczeniem w sesjach studyjnych i plenerowych. Współpracuję z fotografami, stylistami i markami modowymi. Zawsze dążę do najwyższej jakości zdjęć i pozytywnej współpracy.</p>
-          <ul>
-            <li>Doświadczenie: 5+ lat</li>
-            <li>Dostępność: Europe</li>
-            <li>Języki: PL / EN</li>
-          </ul>
+          <p>Jestem fotomodelką z ponad 5-letnim doświadczeniem w branży mody i reklamy. Współpracowałam z agencjami, fotografami oraz markami modowymi. Moje sesje łączą naturalność z silnym wyrazem artystycznym.</p>
+          <h3>FAQ</h3>
+          <details>
+            <summary>Jak zarezerwować sesję?</summary>
+            <p>Najprościej poprzez formularz kontaktowy lub email. W odpowiedzi podaję dostępne terminy i wstępny koszt.</p>
+          </details>
+          <details>
+            <summary>Jakie są ceny?</summary>
+            <p>Ceny zależą od zakresu (czas, lokalizacja, makeup). Podaję wycenę po ustaleniu szczegółów.</p>
+          </details>
           <a class="btn ghost" href="#gallery">Zobacz portfolio</a>
         </div>
         <div class="about-portrait">
-          <img data-src="assets/portrait.jpg" alt="Portrait" class="lazy rounded">
+          <img data-src="assets/portrait-400.jpg" alt="Portrait" class="lazy rounded">
         </div>
       </div>
     </section>
 
+    <section id="services" class="services container">
+      <h2>Usługi</h2>
+      <ul class="services-list">
+        <li>Sesje studyjne</li>
+        <li>Sesje plenerowe</li>
+        <li>Kampanie komercyjne</li>
+        <li>Współpraca z markami i influencerami</li>
+      </ul>
+    </section>
+
     <section id="gallery" class="gallery container">
       <h2>Galeria</h2>
-      <p class="muted">Kliknij zdjęcie, aby powiększyć. Galeria jest responsywna i ładuje obrazy leniwie.</p>
+      <p class="muted">Filtruj według stylu i kliknij zdjęcie, aby powiększyć.</p>
+
+      <div class="gallery-controls">
+        <button class="filter-btn active" data-filter="all">Wszystkie</button>
+        <button class="filter-btn" data-filter="studio">Studio</button>
+        <button class="filter-btn" data-filter="outdoor">Plener</button>
+        <button class="filter-btn" data-filter="commercial">Komercyjne</button>
+      </div>
+
       <div class="gallery-grid" aria-live="polite">
-        <button class="gallery-item" data-full="assets/img1.jpg"><img data-src="assets/thumb1.jpg" alt="Sesja 1" class="lazy"></button>
-        <button class="gallery-item" data-full="assets/img2.jpg"><img data-src="assets/thumb2.jpg" alt="Sesja 2" class="lazy"></button>
-        <button class="gallery-item" data-full="assets/img3.jpg"><img data-src="assets/thumb3.jpg" alt="Sesja 3" class="lazy"></button>
-        <button class="gallery-item" data-full="assets/img4.jpg"><img data-src="assets/thumb4.jpg" alt="Sesja 4" class="lazy"></button>
-        <button class="gallery-item" data-full="assets/img5.jpg"><img data-src="assets/thumb5.jpg" alt="Sesja 5" class="lazy"></button>
-        <button class="gallery-item" data-full="assets/img6.jpg"><img data-src="assets/thumb6.jpg" alt="Sesja 6" class="lazy"></button>
+        <button class="gallery-item" data-full="assets/full1.jpg" data-category="studio"><img data-src="assets/thumb1.jpg" alt="Sesja 1" class="lazy"></button>
+        <button class="gallery-item" data-full="assets/full2.jpg" data-category="outdoor"><img data-src="assets/thumb2.jpg" alt="Sesja 2" class="lazy"></button>
+        <button class="gallery-item" data-full="assets/full3.jpg" data-category="commercial"><img data-src="assets/thumb3.jpg" alt="Sesja 3" class="lazy"></button>
+        <button class="gallery-item" data-full="assets/full4.jpg" data-category="studio"><img data-src="assets/thumb4.jpg" alt="Sesja 4" class="lazy"></button>
+        <button class="gallery-item" data-full="assets/full5.jpg" data-category="outdoor"><img data-src="assets/thumb5.jpg" alt="Sesja 5" class="lazy"></button>
+        <button class="gallery-item" data-full="assets/full6.jpg" data-category="commercial"><img data-src="assets/thumb6.jpg" alt="Sesja 6" class="lazy"></button>
       </div>
     </section>
 
